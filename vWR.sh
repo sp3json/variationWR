@@ -15,14 +15,12 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 #
-keys="/path/to/aes256/keys"
-
+keys="/path/to/aes256/keys" #keys separate by \n
 awk '{ a[$0] }
 END {
-        for (i in a){
-                for (j in a){
-                        if (i != j)  print (i "" j)
-                        
-                }
+    for (i in a){
+        for (j in a){
+            if (i != j)  print (i "" j)
         }
+    }
 }' $keys
